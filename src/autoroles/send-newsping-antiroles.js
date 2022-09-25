@@ -9,7 +9,7 @@ $apiMessage[$channelID;;{newEmbed:{color:YELLOW}{author:Get notified for the nex
 
 $deleteCommand
 
-$onlyForIDs[$botOwnerID;]
+$onlyForIDs[$getVar[OwnerID];]
 ` 
 }, {
 type: "interaction",

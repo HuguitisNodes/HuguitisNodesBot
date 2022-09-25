@@ -57,6 +57,9 @@ SuccessEmoji: setting.SuccessEmoji,
 ErrorEmoji: setting.ErrorEmoji,
 LoadingEmoji: setting.LoadingEmoji,
 
+Prefix: setting.Prefix,
+OwnerID: setting.OwnerID,
+StaffIDs: setting.StaffIDs,
 SpanishRole: setting.SpanishRole,
 EnglishRole: setting.EnglishRole,
 NewsPingRole: setting.NewsPingRole,
@@ -78,7 +81,9 @@ TimesJoined: "0",
 IncidentHistory: "",
 HuguitisPinged: "0",
 MessagesSent: "0",
-Coins: "0"
+Coins: "0",
+AFK: "No",
+AFKReason: "None."
 })
 
 bot.functionManager.createCustomFunction({

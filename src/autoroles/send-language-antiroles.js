@@ -8,7 +8,7 @@ $apiMessage[$channelID;;{newEmbed:{color:YELLOW}{author:Preferred language for s
 
 $deleteCommand
 
-$onlyForIDs[$botOwnerID;]
+$onlyForIDs[$getVar[OwnerID];]
 ` 
 }, {
 type: "interaction",
