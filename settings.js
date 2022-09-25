@@ -1,23 +1,23 @@
 module.exports = {
-Token: "",
-Prefix: "",
+Token: "", // Discord token discord.com/developers/applications
+Prefix: "", //Put Prefix Here
 
-SuccessEmoji: "",
-ErrorEmoji: "",
-LoadingEmoji: "",
+SuccessEmoji: "", //Success Emoji
+ErrorEmoji: "", //Error Emoji
+LoadingEmoji: "", //Loading Emoji
 
-SpanishRole: "",
-EnglishRole: "",
-NewsPingRole: "",
-ChangelogsPingRole: "",
-IncidentPingRole: "",
-MemberRole: "",
-EarlyUserRole: "",
-VeryEarlyUserRole: "",
-RegisteredRole: "",
+SpanishRole: "", //Role Id For Spanish Role
+EnglishRole: "", //Role Id For English Role
+NewsPingRole: "", //Role Id For News Ping
+ChangelogsPingRole: "", //Role Id For Change Log Ping
+IncidentPingRole: "", //Role Id For Incident Ping 
+MemberRole: "", //Role Id For Member 
+EarlyUserRole: "", //Role Id For Early User
+VeryEarlyUserRole: "", //Role Id For Very Early User
+RegisteredRole: "", // Role Id For Registered Role
 
-GetStartedChannel: "",
-AutoRolesChannel: "",
-JoinLogsChannel: "",
-PublicLogsChannel: ""
+GetStartedChannel: "", //Get Started Channel Id
+AutoRolesChannel: "", //Auto Roles Channel Id
+JoinLogsChannel: "",  //Join Logs Channel Id
+PublicLogsChannel: "" //Public Logs Channel Id
 }
