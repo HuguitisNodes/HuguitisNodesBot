@@ -68,7 +68,7 @@ IncidentPingRole: setting.IncidentPingRole,
 MemberRole: setting.MemberRole,
 EarlyUserRole: setting.EarlyUserRole,
 VeryEarlyUserRole: setting.VeryEarlyUserRole,
-RegisteredRole: setting.RegisteredRole,
+CoolGuyRole: setting.CoolGuyRole,
 
 GetStartedChannel: setting.GetStartedChannel,
 AutoRolesChannel: setting.AutoRolesChannel,

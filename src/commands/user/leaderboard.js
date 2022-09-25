@@ -1,7 +1,7 @@
 module.exports = [{
 name: "leaderboard",
 code: `
-$editMessage[$get[id];{newEmbed:{description:**__Amount of times mentioning Huguitis__:**
+$editMessage[$get[id];{newEmbed:{description:**__Amount of times mentioning $username[$getVar[OwnerID]]__:**
 $globalUserLeaderboard[HuguitisPinged;asc;**{top}: {username}** - {value} times.]
 
 **__Amount of messages sent__:**

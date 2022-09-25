@@ -16,7 +16,7 @@ IncidentPingRole: "", // Role Id For Incident Ping
 MemberRole: "", // Role Id For Member 
 EarlyUserRole: "", // Role Id For Early User
 VeryEarlyUserRole: "", // Role Id For Very Early User
-RegisteredRole: "", // Role Id For Registered Role
+CoolGuyRole: "", // Role Id For Cool Guy
 
 GetStartedChannel: "", // Get Started Channel Id.
 AutoRolesChannel: "", // Auto Roles Channel Id. 
