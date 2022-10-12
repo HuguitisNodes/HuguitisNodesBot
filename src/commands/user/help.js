@@ -9,8 +9,8 @@ $description[1;
 > - $getVar[Prefix]leaderboard
 
 **__Credits:__**
-- **Bot Repository:** https://github.com/HuguitisNodes/HuguitisNodesBot
-- **Support Server:** https://discord.gg/CVbPZRt9yG
-- **Website:** https://huguitisnodes.host
+- [Bot Repository](https://github.com/HuguitisNodes/HuguitisNodesBot)
+- [Support Server](https://discord.gg/CVbPZRt9yG)
+- [Website](https://huguitisnodes.host)
 ]`
 })
