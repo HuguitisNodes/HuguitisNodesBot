@@ -17,7 +17,7 @@ name: "$alwaysExecute",
 code: `
 $description[1;**__$username[$mentioned[1;no]]__ is afk for this reason:** $getGlobalUserVar[AFKReason;$mentioned[1;no]]
 
-> Please do not ping him and be pacient.]
+> Please do not ping him and be patient.]
 $color[1;RED]
 $onlyIf[$getGlobalUserVar[AFK;$mentioned[1;no]]!=No]
 `
