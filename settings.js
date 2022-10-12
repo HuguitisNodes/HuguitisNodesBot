@@ -21,5 +21,7 @@ CoolGuyRole: "", // Role Id For Cool Guy
 GetStartedChannel: "", // Get Started Channel Id.
 AutoRolesChannel: "", // Auto Roles Channel Id. 
 JoinLogsChannel: "",  // Join Logs Channel Id. Join Logs Go Here
-PublicLogsChannel: "" // Public Logs Channel Id. Some Logs Go Here, Does Not Have To Be Public
+PublicLogsChannel: "", // Public Logs Channel Id. Some Logs Go Here, Does Not Have To Be Public
+
+OfficialServerInvite: "" // The official server invite link
 }
