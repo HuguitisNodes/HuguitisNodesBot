@@ -7,6 +7,10 @@ $description[1;
 **__Public Commands:__**
 > - $getVar[Prefix]user
 > - $getVar[Prefix]leaderboard
+> - $getVar[Prefix]info
+**__Admin Commands:__**
+> - $getVar[Prefix]afk
+> - $getVar[Prefix]eval
 
 **__Credits:__**
 - [Bot Repository](https://github.com/HuguitisNodes/HuguitisNodesBot)
