@@ -69,6 +69,7 @@ MemberRole: setting.MemberRole,
 EarlyUserRole: setting.EarlyUserRole,
 VeryEarlyUserRole: setting.VeryEarlyUserRole,
 CoolGuyRole: setting.CoolGuyRole,
+OfficialServerInvite: setting.OfficialServerInvite,
 
 GetStartedChannel: setting.GetStartedChannel,
 AutoRolesChannel: setting.AutoRolesChannel,
