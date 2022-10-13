@@ -1,31 +1,38 @@
 module.exports = ({
- name:"ban",
- code: `$deletecommand
-$color[RANDOM] 
-$author[🛠️ Banned successfully]
-$addField[About:;
+name:"ban",
+code: `
+$color[1;GREEN] 
+$author[1;$getVar[SuccessEmoji] Banned successfully.]
+$addField[1;About:;
 Reason:
-> $replaceText[$replaceText[$checkCondition[$messageSlice[1]==];true;A reason wasn't provided.];false;$messageSlice[1]]
+> $if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]
 Date:
 > $day $month $year
 ]
-$addField[User information;
-$userTag[$findUser[$message[1]]] - $findUser[$message[1]]]
-$addField[Moderator;
+$addField[1;User information:;
+$userTag[$findUser[$message[1];no]] - $findUser[$message[1];no]]
+$addField[1;Banned by:;
 $userTag - $authorID]
-$thumbnail[$userAvatar[$findUser[$message[1]]]]
-$ban[$findUser[$message[1]];$userTag: $replaceText[$replaceText[$checkCondition[$messageSlice[1]==];true;A reason wasn't provided.];false;$messageSlice[1]];7]
-$if[$memberExists[$findUser[$message[1]]]==true]
-$onlyIf[$rolePosition[$highestRole[$findUser[$message[1]]]]>$rolePosition[$highestRole]; To use this you need to have a higher rank than the mentioned user.]
-$onlyIf[$findUser[$message[1]]!=$authorID;** You can't ban yourself (Or else, I couldn't find that user)**]
-$onlyIf[$findUser[$message[1]]!=$clientID;** I can't ban myself, that's illegal**]
-$onlyIf[$findUser[$message[1]]!=$ownerID;**I can't ban the owner of the server**]
-$elseIf[$memberExists[$findUser[$message[1]]]==false
-$onlyIf[$findUser[$message[1]]!=$authorID;** You can't ban yourself (Or else, I couldn't find that user)**]
-$endelseIf
-$endif
-$onlyIf[$isBanned[$findUser[$message[1]]]==false;**This user has already been banned on this server**]
-$onlyIf[$message!=;** Please specify the user you want to ban. Correct usage:** \`$getServerVar[Prefix]ban <@User> [Reason\\]\`]
-$onlyPerms[ban;**To use this you require the \`BAN_MEMBERS\` permission**]
- $onlyBotPerms[ban;**I don't have enough perms to execute this command. Permissions missing:** \`BAN_MEMBERS\`]`
+$thumbnail[1;$userAvatar[$findUser[$message[1];no]]]
+
+$ban[$guildID;$findUser[$message[1];no];;$if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]]
+
+$onlyIf[$rolePosition[$highestRole[$findUser[$message[1];no]]]>$rolePosition[$highestRole[$clientID]];$getVar[ErrorEmoji] **That user have a higher rank than me, so I can't ban him.**]
+
+$onlyIf[$rolePosition[$highestRole[$findUser[$message[1];no]]]>$rolePosition[$highestRole];$getVar[ErrorEmoji] **To use this you need to have a higher rank than the indicated user.**]
+
+$onlyIf[$findUser[$message[1];no]!=;$getVar[ErrorEmoji] **I couldn't find that user.**]
+
+$onlyIf[$findUser[$message[1];no]!=$clientID;$getVar[ErrorEmoji] **I can't ban myself... I think...**]
+
+$onlyIf[$findUser[$message[1];no]!=$ownerID;$getVar[ErrorEmoji] **I can't ban the owner of the server.**]
+
+$onlyIf[$isBanned[$findUser[$message[1];no]]!=true;$getVar[ErrorEmoji] **This user has already been banned on this server.**]
+
+$argsCheck[>0;$getVar[ErrorEmoji] **Please specify the user you want to ban. 
+> __Correct usage:__** $getServerVar[Prefix]ban <User> [Reason]]
+
+$onlyIf[$hasAnyPerm[$guildID;$authorID;admin;ban]!=false;$getVar[ErrorEmoji] **To use this you require the \`BAN_MEMBERS\` permission.**]
+$onlyIf[$hasAnyPerm[$guildID;$clientID;admin;ban]!=false;$getVar[ErrorEmoji] **I don't have enough perms to execute this command. Permissions missing:** \`BAN_MEMBERS\`]
+`
 })
