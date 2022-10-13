@@ -20,12 +20,12 @@ $onlyIf[$rolePosition[$highestRole[$findUser[$message[1]]]]>$rolePosition[$highe
 $onlyIf[$findUser[$message[1]]!=$authorID;** You can't ban yourself (Or else, I couldn't find that user)**]
 $onlyIf[$findUser[$message[1]]!=$clientID;** I can't ban myself, that's illegal**]
 $onlyIf[$findUser[$message[1]]!=$ownerID;**I can't ban the owner of the server**]
-$elseIf[$memberExists[$findUser[$message[1]]]==false]
+$elseIf[$memberExists[$findUser[$message[1]]]==false
 $onlyIf[$findUser[$message[1]]!=$authorID;** You can't ban yourself (Or else, I couldn't find that user)**]
 $endelseIf
 $endif
 $onlyIf[$isBanned[$findUser[$message[1]]]==false;**This user has already been banned on this server**]
-$onlyIf[$message!=;** Please specify the user you want to ban. Correct usage:** \`$getServerVar[prefix]ban <@User> [Reason\\]\`]
+$onlyIf[$message!=;** Please specify the user you want to ban. Correct usage:** \`$getServerVar[Prefix]ban <@User> [Reason\\]\`]
 $onlyPerms[ban;**To use this you require the \`BAN_MEMBERS\` permission**]
  $onlyBotPerms[ban;**I don't have enough perms to execute this command. Permissions missing:** \`BAN_MEMBERS\`]`
 })
