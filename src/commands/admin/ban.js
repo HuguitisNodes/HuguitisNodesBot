@@ -2,7 +2,7 @@ module.exports = ({
 name:"ban",
 code: `
 $color[1;GREEN] 
-$author[1;$getVar[SuccessEmoji] Banned successfully.]
+$title[1;$getVar[SuccessEmoji] Banned successfully.]
 $addField[1;About:;
 Reason:
 > $if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]
