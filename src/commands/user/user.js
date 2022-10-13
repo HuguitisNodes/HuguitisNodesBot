@@ -14,6 +14,7 @@ $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]
 **- Ping - News:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[NewsPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Ping - Incidents:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[IncidentPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Ping - Changelogs:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[ChangelogsPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
+
 **• __Achievements:__**
 **- Patreon Donator:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[PatreonDonator]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Cool Guy:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[CoolGuyRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
