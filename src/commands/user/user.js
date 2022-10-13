@@ -4,7 +4,7 @@ aliases: "profile",
 code: `
 $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]'s profile:__**
 **• __General Info:__**
-**- Preferred Language:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[SpanishRole]]==true;Español :flag_es:;$if[$hasRoles[$guildID;$findUser[$message];$getVar[EnglishRole]]==true;English :flag_us:;None.]]
+**- Preferred Language:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[SpanishRole]]==true;Español :flag_es:;$if[$hasRoles[$guildID;$findUser[$message];$getVar[EnglishRole]]==true;English :flag_gb:;None.]]
 **- Times Joined:** $getGlobalUserVar[TimesJoined;$findUser[$message]]
 **- Messages Sent:** $getGlobalUserVar[MessagesSent;$findUser[$message]] | **Top:** #$getLeaderboardInfo[MessagesSent;$findUser[$message];globaluser;top]
 **- Times Mentioned $username[$getVar[OwnerID]]:** $getGlobalUserVar[HuguitisPinged;$findUser[$message]] | **Top:** #$getLeaderboardInfo[HuguitisPinged;$findUser[$message];globaluser;top]
