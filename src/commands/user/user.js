@@ -9,6 +9,7 @@ $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]
 **- Messages Sent:** $getGlobalUserVar[MessagesSent;$findUser[$message]] | **Top:** #$getLeaderboardInfo[MessagesSent;$findUser[$message];globaluser;top]
 **- Times Mentioned $username[$getVar[OwnerID]]:** $getGlobalUserVar[HuguitisPinged;$findUser[$message]] | **Top:** #$getLeaderboardInfo[HuguitisPinged;$findUser[$message];globaluser;top]
 **- Coins:** $getGlobalUserVar[Coins;$findUser[$message]]
+
 **• __Pings:__**
 **- Ping - News:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[NewsPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Ping - Incidents:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[IncidentPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
@@ -18,10 +19,12 @@ $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]
 **- Cool Guy:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[CoolGuyRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Early User:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[EarlyUserRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Very Early User:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[VeryEarlyUserRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
+
 **- Mentioning $username[$getVar[OwnerID]] 15 Times:** $if[$getGlobalUserVar[HuguitisPinged;$findUser[$message]]>=15;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Mentioning $username[$getVar[OwnerID]] 30 Times:** $if[$getGlobalUserVar[HuguitisPinged;$findUser[$message]]>=30;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Mentioning $username[$getVar[OwnerID]] 50 Times:** $if[$getGlobalUserVar[HuguitisPinged;$findUser[$message]]>=50;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Mentioning $username[$getVar[OwnerID]] 100 Times:** $if[$getGlobalUserVar[HuguitisPinged;$findUser[$message]]>=100;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]  
+
 **- 10 Messages Sent:** $if[$getGlobalUserVar[MessagesSent;$findUser[$message]]>=10;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- 50 Messages Sent:** $if[$getGlobalUserVar[MessagesSent;$findUser[$message]]>=50;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- 100 Messages Sent:** $if[$getGlobalUserVar[MessagesSent;$findUser[$message]]>=100;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
