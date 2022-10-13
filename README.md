@@ -11,6 +11,7 @@ Make a pull request and we will check over it!
 3. Run `node .`
 4. Done! If you want to change more then that is fine!
 
-# Support:
+# Links:
 - [Discord Server](https://discord.gg/CVbPZRt9yG)
+- [Hosting Website](https://huguitisnodes.host)
 - mail@huguitisnodes.host
