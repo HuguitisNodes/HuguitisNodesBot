@@ -10,6 +10,7 @@ $description[1;
 > - $getVar[Prefix]info
 **__Admin Commands:__**
 > - $getVar[Prefix]afk
+> - $getVar[Prefix]ban
 > - $getVar[Prefix]eval
 
 **__Credits:__**

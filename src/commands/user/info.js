@@ -7,10 +7,13 @@ module.exports = ({
     **__Official Server Invite: __**
     > **$getVar[OfficialServerInvite]**
 
-    **__Bot Prefix: __**
-    > **$getVar[Prefix]**
-
-    **__Credits:__**
+    **__Bot Config: __**
+    > **Owner Id: $getVar[OwnerID]**
+    > **Prefix: $getVar[Prefix]**
+    > **Success Emoji: $getVar[SuccessEmoji]**
+    > **Error Emoji: $getVar[ErrorEmoji]**
+    > **Loading Emoji: $getVar[LoadingEmoji]**
+    **__Bot Credits:__**
     - **Bot Repository:** https://github.com/HuguitisNodes/HuguitisNodesBot
     - **Support Server:** https://discord.gg/CVbPZRt9yG
     - **Website:** https://huguitisnodes.host

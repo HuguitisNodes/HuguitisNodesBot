@@ -17,7 +17,8 @@ MemberRole: "", // Role Id For Member
 EarlyUserRole: "", // Role Id For Early User
 VeryEarlyUserRole: "", // Role Id For Very Early User
 CoolGuyRole: "", // Role Id For Cool Guy
-
+PatreonDonator: "", //Role Id for Patreon Donator
+ 
 GetStartedChannel: "", // Get Started Channel Id.
 AutoRolesChannel: "", // Auto Roles Channel Id. 
 JoinLogsChannel: "",  // Join Logs Channel Id. Join Logs Go Here

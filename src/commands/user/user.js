@@ -3,9 +3,8 @@ name: "user",
 aliases: "profile",
 code: `
 $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]'s profile:__**
-
 **• __General Info:__**
-**- Preferred Language:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[SpanishRole]]==true;Español :flag_es:;$if[$hasRoles[$guildID;$findUser[$message];$getVar[EnglishRole]]==true;English :flag_us:;None.]]
+**- Preferred Language:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[SpanishRole]]==true;Español :flag_es:;$if[$hasRoles[$guildID;$findUser[$message];$getVar[EnglishRole]]==true;English :flag_gb:;None.]]
 **- Times Joined:** $getGlobalUserVar[TimesJoined;$findUser[$message]]
 **- Messages Sent:** $getGlobalUserVar[MessagesSent;$findUser[$message]] | **Top:** #$getLeaderboardInfo[MessagesSent;$findUser[$message];globaluser;top]
 **- Times Mentioned $username[$getVar[OwnerID]]:** $getGlobalUserVar[HuguitisPinged;$findUser[$message]] | **Top:** #$getLeaderboardInfo[HuguitisPinged;$findUser[$message];globaluser;top]
@@ -17,6 +16,7 @@ $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]
 **- Ping - Changelogs:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[ChangelogsPingRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 
 **• __Achievements:__**
+**- Patreon Donator:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[PatreonDonator]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Cool Guy:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[CoolGuyRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Early User:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[EarlyUserRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- Very Early User:** $if[$hasRoles[$guildID;$findUser[$message];$getVar[VeryEarlyUserRole]]==true;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
@@ -35,7 +35,6 @@ $editMessage[$get[id];{newEmbed:{description:> **__$userTag[$findUser[$message]]
 **- 3000 Messages Sent:** $if[$getGlobalUserVar[MessagesSent;$findUser[$message]]>=3000;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 **- 10000 Messages Sent:** $if[$getGlobalUserVar[MessagesSent;$findUser[$message]]>=10000;Yes $getVar[SuccessEmoji];No $getVar[ErrorEmoji]]
 }{color:GREEN}{thumbnail:$userAvatar[$findUser[$message]]}}]
-
 $let[id;$sendMessage[{
 "embeds" : "{newEmbed:{description:$getVar[LoadingEmoji] **Loading...**}{color:YELLOW}}"
 };yes]]`
