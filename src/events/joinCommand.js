@@ -23,7 +23,7 @@ $sendDM[**__Thank you for joining Huguitis Nodes!__**
 
 > Here's an infinite invitation in case you ever need it!
 > https://discord.gg/CVbPZRt9yG;$authorID]
-
+**This Message Can be Changed In File /src/events/joinCommand.js **
 $color[1;GREEN]
 $description[1;
 **__$userTag has joined to the server!__**
