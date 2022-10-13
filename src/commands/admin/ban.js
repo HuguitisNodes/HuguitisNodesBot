@@ -17,10 +17,6 @@ $thumbnail[1;$userAvatar[$findUser[$message[1];no]]]
 
 $ban[$guildID;$findUser[$message[1];no];;$if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]]
 
-$onlyIf[$rolePosition[$highestRole[$findUser[$message[1];no]]]>$rolePosition[$highestRole[$clientID]];$getVar[ErrorEmoji] **That user have a higher rank than me, so I can't ban him.**]
-
-$onlyIf[$rolePosition[$highestRole[$findUser[$message[1];no]]]>$rolePosition[$highestRole];$getVar[ErrorEmoji] **To use this you need to have a higher rank than the indicated user.**]
-
 $onlyIf[$findUser[$message[1];no]!=;$getVar[ErrorEmoji] **I couldn't find that user.**]
 
 $onlyIf[$findUser[$message[1];no]!=$clientID;$getVar[ErrorEmoji] **I can't ban myself... I think...**]
