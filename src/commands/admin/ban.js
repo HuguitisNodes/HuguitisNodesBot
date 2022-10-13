@@ -27,7 +27,7 @@ $onlyIf[$findUser[$message[1];no]!=$clientID;$getVar[ErrorEmoji] **I can't ban m
 
 $onlyIf[$findUser[$message[1];no]!=$ownerID;$getVar[ErrorEmoji] **I can't ban the owner of the server.**]
 
-$onlyIf[$isBanned[$findUser[$message[1];no]]!=true;$getVar[ErrorEmoji] **This user has already been banned on this server.**]
+$onlyIf[$isBanned[$guildID;$findUser[$message[1];no]]!=true;$getVar[ErrorEmoji] **This user has already been banned on this server.**]
 
 $argsCheck[>0;$getVar[ErrorEmoji] **Please specify the user you want to ban. 
 > __Correct usage:__** $getServerVar[Prefix]ban <User> [Reason]]
