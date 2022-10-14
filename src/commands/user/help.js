@@ -5,13 +5,18 @@ code: `
 $color[1;GREEN]
 $description[1;
 **__Public Commands:__**
-> - $getVar[Prefix]user
-> - $getVar[Prefix]leaderboard
+> - $getVar[Prefix]help
 > - $getVar[Prefix]info
+> - $getVar[Prefix]leaderboard
+> - $getVar[Prefix]ping
+> - $getVar[Prefix]serverinfo
+> - $getVar[Prefix]user
+
 **__Admin Commands:__**
 > - $getVar[Prefix]afk
 > - $getVar[Prefix]ban
 > - $getVar[Prefix]eval
+> - $getVar[Prefix]reboot
 
 **__Credits:__**
 - [Bot Repository](https://github.com/HuguitisNodes/HuguitisNodesBot)
