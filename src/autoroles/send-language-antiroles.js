@@ -2,9 +2,9 @@ module.exports = [{
 name: "send-language-antiroles",
 code: `
 $apiMessage[$channelID;;{newEmbed:{color:YELLOW}{author:Preferred language for support/server#COLON#:$serverIcon}{description:
-<:spanish:978744257588367430> **Spanish.**
-<:english:978744275955232789> **English.**
-}};{actionRow:{button:Spanish:success:Spanish:no:<:spanish:978744257588367430>}{button:English:success:English:no:<:english:978744275955232789>}}]
+:flag_es: **Spanish.**
+:flag_gb: **English.**
+}};{actionRow:{button:Spanish:success:Spanish:no: :flag_es:}{button:English:success:English:no: :flag_gb:}}]
 
 $deleteCommand
 
