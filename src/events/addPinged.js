@@ -39,4 +39,11 @@ code: `
 $channelSendMessage[$getVar[PublicLogsChannel];The user <@$authorID> mentioned $username[$getVar[OwnerID]] 100 times in total!]
 <@$authorID>; I honestly don't know what more you want, you pinged it 100 times...
 `
+}, {
+name: "1000PingsReward",
+type: "awaited",
+code: `
+$channelSendMessage[$getVar[PublicLogsChannel];The user <@$authorID> mentioned $username[$getVar[OwnerID]] 1000 times in total! They Must Be Crazy!]
+<@$authorID>; How has $username[$getVar[OwnerID]] not banned you yet? **You Are Crazy!**
+`
 }]
