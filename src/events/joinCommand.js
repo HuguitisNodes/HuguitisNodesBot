@@ -18,7 +18,7 @@ type: "join",
 channel: "$getVar[JoinLogsChannel]",
 code: `
 $sendDM[**__Thank you for joining Huguitis Nodes!__**
-- If you want to create a free server for your bot, database, etc: https://panel.huguitisnodes.host
+- If you want to create a free server for your bot, database, etc: https://huguitisnodes.host
 - If you need help you can create a ticket or ask on the forum channel.
 
 > Here's an infinite invitation in case you ever need it!
