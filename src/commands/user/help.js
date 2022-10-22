@@ -17,7 +17,6 @@ $description[1;
 > - $getVar[Prefix]ban
 > - $getVar[Prefix]eval
 > - $getVar[Prefix]reboot
-> - $getVar[Prefix]purge
 
 **__Credits:__**
 - [Bot Repository](https://github.com/HuguitisNodes/HuguitisNodesBot)
