@@ -5,6 +5,7 @@ code: `
 $deleteIn[10s]
 <@$authorID> Get started here ^^
 $giveRole[$guildID;$authorID;$getVar[MemberRole]]
+$onlyForServers[$getVar[OfficialServerID];]
 `
 }, {
 type: "join",
@@ -12,6 +13,7 @@ channel: "$getVar[AutoRolesChannel]",
 code: `
 $deleteIn[10s]
 <@$authorID> Get your roles here ^^
+$onlyForServers[$getVar[OfficialServerID];]
 `
 }, {
 type: "join",
@@ -36,5 +38,6 @@ $thumbnail[1;$authorAvatar]
 $footer[1;Say hello!]
 $wait[0.3s]
 $setGlobalUserVar[TimesJoined;$sum[$getGlobalUserVar[TimesJoined];1]]
+$onlyForServers[$getVar[OfficialServerID];]
 `
 }]
