@@ -24,5 +24,6 @@ AutoRolesChannel: "", // Auto Roles Channel Id.
 JoinLogsChannel: "",  // Join Logs Channel Id. Join Logs Go Here
 PublicLogsChannel: "", // Public Logs Channel Id. Some Logs Go Here, Does Not Have To Be Public
 
-OfficialServerInvite: "" // The official server invite link
+OfficialServerInvite: "", // The official server invite link
+OfficialServerID: ""
 }
