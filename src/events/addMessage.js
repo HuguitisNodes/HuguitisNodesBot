@@ -13,6 +13,7 @@ $wait[0.3s]
 $setGlobalUserVar[MessagesSent;$sum[$getGlobalUserVar[MessagesSent];1]]
 $setGlobalUserVar[Coins;$sum[$getGlobalUserVar[Coins];$random[1;5]]]
 $cooldown[0.5s;]
+$onlyForServers[$getVar[OfficialServerID];]
 `
 }, {
 name: "10MessagesReward",
