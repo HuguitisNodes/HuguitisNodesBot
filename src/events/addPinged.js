@@ -10,7 +10,8 @@ $onlyIf[$getGlobalUserVar[HuguitisPinged]!=10;<@$authorID>, you've already been 
 $onlyIf[$getGlobalUserVar[HuguitisPinged]!=5;<@$authorID>, you should stop mentioning $username[$getVar[OwnerID]], you've already mentioned him 5 times.]
 $wait[0.3s]
 $setGlobalUserVar[HuguitisPinged;$sum[$getGlobalUserVar[HuguitisPinged];1]]
-$onlyIf[$checkContains[$message;<@$getVar[OwnerID]>]!=false;]`
+$onlyIf[$checkContains[$message;<@$getVar[OwnerID]>]!=false;]
+$onlyForServers[$getVar[OfficialServerID];]`
 }, {
 name: "15PingsReward",
 type: "awaited",
