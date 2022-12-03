@@ -71,6 +71,7 @@ VeryEarlyUserRole: setting.VeryEarlyUserRole,
 CoolGuyRole: setting.CoolGuyRole,
 PatreonDonator: setting.PatreonDonator,
 OfficialServerInvite: setting.OfficialServerInvite,
+OfficialServerID: setting.OfficialServerID,
 
 GetStartedChannel: setting.GetStartedChannel,
 AutoRolesChannel: setting.AutoRolesChannel,
