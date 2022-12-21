@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "aoi.db": "github:leref/aoi.db#dev",
     "aoi.js": "^5.5.5",
-    "dbdjs.db": "^2.0.2",
-    "https": "^1.0.0"
+    "dbdjs.db": "^2.0.2"
   }
 }
