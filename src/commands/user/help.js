@@ -4,23 +4,23 @@ aliases: "commands",
 code: `
 $color[1;GREEN]
 $description[1;
-**__Public Commands:__**
-> - $getVar[Prefix]help
-> - $getVar[Prefix]info
-> - $getVar[Prefix]leaderboard
-> - $getVar[Prefix]ping
-> - $getVar[Prefix]serverinfo
+**__User Commands:__**
 > - $getVar[Prefix]user
+> - $getVar[Prefix]convertCoins
+> - $getVar[Prefix]leaderboard
+> - $getVar[Prefix]help
 
 **__Admin Commands:__**
-> - $getVar[Prefix]afk
+> - $getVar[Prefix]sendTicketMessage
+> - $getVar[Prefix]sendAutoRoles
 > - $getVar[Prefix]ban
+
+**__Owner Commands:__**
 > - $getVar[Prefix]eval
-> - $getVar[Prefix]reboot
 
 **__Credits:__**
 - [Bot Repository](https://github.com/HuguitisNodes/HuguitisNodesBot)
-- [Support Server](https://discord.gg/CVbPZRt9yG)
+- [Support Server]($getVar[OfficialServerInvite])
 - [Website](https://huguitisnodes.host)
 ]`
 })

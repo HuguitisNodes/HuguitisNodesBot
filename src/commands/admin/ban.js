@@ -1,18 +1,23 @@
 module.exports = ({
 name:"ban",
 code: `
-$color[1;GREEN] 
-$title[1;$getVar[SuccessEmoji] Banned successfully.]
+$color[1;GREEN]
+
+$title[1;$getVar[SuccessEmoji] User banned successfully.]
+
 $addField[1;About:;
 Reason:
 > $if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]
 Date:
 > $day $month $year
 ]
+
 $addField[1;User information:;
 $userTag[$findUser[$message[1];no]] - $findUser[$message[1];no]]
+
 $addField[1;Banned by:;
 $userTag - $authorID]
+
 $thumbnail[1;$userAvatar[$findUser[$message[1];no]]]
 
 $ban[$guildID;$findUser[$message[1];no];;$if[$messageSlice[1]==;A reason wasn't provided.;$messageSlice[1]]]
@@ -28,7 +33,7 @@ $onlyIf[$isBanned[$guildID;$findUser[$message[1];no]]!=true;$getVar[ErrorEmoji] 
 $argsCheck[>0;$getVar[ErrorEmoji] **Please specify the user you want to ban. 
 > __Correct usage:__** $getServerVar[Prefix]ban <User> [Reason]]
 
-$onlyIf[$hasAnyPerm[$guildID;$authorID;admin;ban]!=false;$getVar[ErrorEmoji] **To use this you require the \`BAN_MEMBERS\` permission.**]
-$onlyIf[$hasAnyPerm[$guildID;$clientID;admin;ban]!=false;$getVar[ErrorEmoji] **I don't have enough perms to execute this command. Permissions missing:** \`BAN_MEMBERS\`]
+$onlyForIDs[$joinSplitText[;];]
+$textSplit[$getVar[StaffIDs];, ]
 `
 })

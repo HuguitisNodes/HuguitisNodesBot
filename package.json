@@ -1,18 +1,8 @@
 {
-    "name": "HuguitisNodesBot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    },
-    "engines": {
-      "node": "16.x"
-    },
-    "author": "",
-    "license": "MIT",
-    "dependencies": {
-      "aoi.js": "^5.5.5",
-      "dbdjs.db": "^2.0.2"
-    }
+  "dependencies": {
+    "aoi.db": "github:leref/aoi.db#dev",
+    "aoi.js": "^5.5.5",
+    "dbdjs.db": "^2.0.2",
+    "https": "^1.0.0"
   }
+}
