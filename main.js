@@ -11,21 +11,13 @@
         alwaysExecute: false,
         nonPrefixed: false
   },    
-// // database: {
- //    db: require("aoi.db"),
-// // //  type: "aoi.db",
- // //   path: "./Database/",
-  // tables: ["Huguitis"],
- // promisify: true
- //  }
-
- database:{
- db: require("dbdjs.db"),
+database:{
+db: require("dbdjs.db"),
 type: "dbdjs.db",
 path:"./Database/",
 tables:["HuguitisNodes"],
 }
- });
+});
 
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd,"./src/")
