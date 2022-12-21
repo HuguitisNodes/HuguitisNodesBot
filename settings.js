@@ -1,29 +1,26 @@
 module.exports = {
-Token: "", // Discord token discord.com/developers/applications
-Prefix: "", // Put Prefix Here
-OwnerID: "", // Owner ID
-StaffIDs: "", // Staff IDs. Separate them with ";"
+Token: "",
+ControlPanelURL: "",
+ControlPanelApiKey: "",
+IPQualityScoreApiKey: "",
+Prefix: "!",
+StaffIDs: "759796588842450944, 763471049894527006...",
+LogsChannelID: "",
+OfficialServerInvite: "https://discord.gg/byarHVDznN",
 
-SuccessEmoji: "", // Success Emoji
-ErrorEmoji: "", // Error Emoji
-LoadingEmoji: "", // Loading Emoji
+SuccessEmoji: "",
+ErrorEmoji: "",
+LoadingEmoji: "",
 
-SpanishRole: "", // Role Id For Spanish Role
-EnglishRole: "", // Role Id For English Role
-NewsPingRole: "", // Role Id For News Ping
-ChangelogsPingRole: "", // Role Id For Change Log Ping
-IncidentPingRole: "", // Role Id For Incident Ping 
-MemberRole: "", // Role Id For Member 
-EarlyUserRole: "", // Role Id For Early User
-VeryEarlyUserRole: "", // Role Id For Very Early User
-CoolGuyRole: "", // Role Id For Cool Guy
-PatreonDonator: "", //Role Id for Patreon Donator
- 
-GetStartedChannel: "", // Get Started Channel Id.
-AutoRolesChannel: "", // Auto Roles Channel Id. 
-JoinLogsChannel: "",  // Join Logs Channel Id. Join Logs Go Here
-PublicLogsChannel: "", // Public Logs Channel Id. Some Logs Go Here, Does Not Have To Be Public
+NewsPingRoleID: "",
+ChangelogsPingRoleID: "",
+IncidentsPingRoleID: "",
+MemberRoleID: "",
+EarlyUserRoleID: "",
+VeryEarlyUserRoleID: "",
+CoolGuyRoleID: "",
 
-OfficialServerInvite: "", // The official server invite link
-OfficialServerID: ""
+GetStartedChannelID: "",
+AutoRolesChannelID: "",
+JoinLogsChannelID: "",
 }
