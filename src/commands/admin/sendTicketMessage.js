@@ -7,7 +7,7 @@ $color[1;GREEN]
 
 $description[1;🎫 **__Create a ticket:__**
 You are about creating a support ticket.
-- Please check <#1033443330631147572> and try using <#926824812171632701> before nothing.
+- Please check <#1033443330631147572> and try using <#926824812171632701> before opening a ticket.
 - We are not obligated to help you with not working code issues.
 - Please have patience, we are not active 24 hours a day.
 
