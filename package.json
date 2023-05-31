@@ -1,6 +1,11 @@
 {
   "dependencies": {
-    "aoi.js": "^5.5.5",
-    "dbdjs.db": "^2.0.2"
+    "aoi.db": "^1.1.0",
+    "aoi.js": "^6.2.6",
+    "aoi.parser": "^1.2.6",
+    "dbdjs.db": "^2.0.2",
+    "discord.js": "^14.10.2",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0"
   }
 }
