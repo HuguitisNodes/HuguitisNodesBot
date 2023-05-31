@@ -1,33 +1,50 @@
  const aoijs = require('aoi.js');
  const setting = require("./settings.js")
- const bot = new aoijs.Bot({
+ const { Util } = require("aoi.js");
+ const { setup } = require("aoi.parser");
+ setup(Util);
+
+ const bot = new aoijs.AoiClient({
    token: setting.Token,
    prefix: setting.Prefix,
    suppressAllErrors: false,
+   aoiLogs: false,
    errorMessage: "",
-   intents: "all",
+   intents: ["MessageContent", "Guilds", "GuildMembers", "GuildMessages", "GuildBans", "GuildEmojisAndStickers", "GuildIntegrations", "GuildWebhooks", "GuildInvites", "GuildVoiceStates", "GuildPresences", "GuildMessageReactions", "GuildMessageTyping", "DirectMessages", "DirectMessageReactions", "DirectMessageTyping"],
+   events: ["onMessage", "onInteractionCreate", "onJoin", "onLeave", "onMessageUpdate", "onGuildJoin", "onGuildLeave"],
    respondOnEdit:{
         commands: false,
         alwaysExecute: false,
         nonPrefixed: false
   },    
-database:{
-db: require("dbdjs.db"),
-type: "dbdjs.db",
-path:"./Database/",
-tables:["HuguitisNodes"],
+database: {
+  type : "aoi.db",
+  db : require("aoi.db"),
+  tables: ["HuguitisNodes"],
+  path: "./Database/",
+  extraOptions: {
+       dbType: "KeyValue",
+       dbOptions: {
+            storeOption: {
+              maxDataPerFile: 10000,
+            },
+            cacheOption: {
+              cacheReference: "DISK",
+              limit: 10000,
+            },
+            methodOption: {
+              getTime: 100,
+            },
+       }
+  }
 }
 });
 
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd,"./src/")
+bot.variables(require("./variables.js"));
 
-bot.onMessage()
-bot.onMessageUpdate()
-bot.onInteractionCreate()
-bot.onJoin()
-bot.onGuildJoin()
-bot.onGuildLeave()
+
 
 loader.setColors({
     walking:["blink","dim","fgWhite"],
@@ -52,44 +69,68 @@ loader.setColors({
            },
 })
 
-bot.variables({
-SuccessEmoji: setting.SuccessEmoji,
-ErrorEmoji: setting.ErrorEmoji,
-LoadingEmoji: setting.LoadingEmoji,
+// Custom Functions:
+const Interpreter = require("./node_modules/aoi.js/src/interpreter.js");
+const {CheckCondition} = require("./node_modules/aoi.js/src/utils/helpers/checkCondition.js");
+const {mustEscape} = require("./node_modules/aoi.js/src/utils/helpers/mustEscape.js");
 
-Prefix: setting.Prefix,
-StaffIDs: setting.StaffIDs,
-OfficialServerInvite: setting.OfficialServerInvite,
+bot.functionManager.createFunction({
+ name: "$if",
+ type: "djs",
+ code: async (d) => {
+    const data = d.util.aoiFunc(d);
+    if (data.err) return d.error(data.err);
 
-NewsPingRoleID: setting.NewsPingRoleID,
-ChangelogsPingRoleID: setting.ChangelogsPingRoleID,
-IncidentsPingRoleID: setting.IncidentsPingRoleID,
-MemberRoleID: setting.MemberRoleID,
-EarlyUserRoleID: setting.EarlyUserRoleID,
-VeryEarlyUserRoleID: setting.VeryEarlyUserRoleID,
-CoolGuyRoleID: setting.CoolGuyRoleID,
+    const [condition, trueawait, falseawait = ""] = data.inside.splits;
 
-GetStartedChannelID: setting.GetStartedChannelID,
-AutoRolesChannelID: setting.AutoRolesChannelID,
-JoinLogsChannelID: setting.JoinLogsChannelID,
-LogsChannelID: setting.LogsChannelID,
+    data.result = eval(CheckCondition.solve(mustEscape(condition)))
+        ? trueawait.addBrackets()
+        : falseawait.addBrackets();
 
-ControlPanelURL: setting.ControlPanelURL,
-ControlPanelApiKey: setting.ControlPanelApiKey,
-IPQualityScoreApiKey: setting.IPQualityScoreApiKey,
+    if (data.result.includes("{execute:")) {
+        const cmd = d.client.cmd.awaited.find(
+            (x) =>
+                x.name.toLowerCase() ===
+                data.result
+                    .addBrackets()
+                    .split("{execute:")[1]
+                    .split("}")[0]
+                    .toLowerCase(),
+        );
+        if (!cmd)
+            return d.aoiError.fnError(
+                d,
+                "custom",
+                {},
+                `Invalid Awaited Command: '${data.result.addBrackets().split("{execute:")[1].split("}")[0]}' Provided`,
+            );
+        await Interpreter(
+            d.client,
+            d.message,
+            d.args,
+            cmd,
+            d.client.db,
+            false,
+            undefined,
+            d.data,
+        );
+        data.result = data.result
+            .addBrackets()
+            .replace(
+                `{execute:${
+                    data.result.addBrackets().split("{execute:")[1].split("}")[0]
+                }}`,
+                "",
+            )
+    } else data.result = data.result.addBrackets();
 
-
-TicketOwner: "",
-TicketOpened: "No",
-TicketClaimed: "No",
-TicketChannel: "No",
-TimesJoined: "0",
-MessagesSent: "0",
-Coins: "0",
-TimesGreeated: "0"
+    return {
+        code: d.util.setCode(data),
+    }
+}
 })
 
-bot.functionManager.createCustomFunction({
+bot.functionManager.createFunction({
 name: "$getLocaleVar",
 type: "djs",
 code: async d => {
@@ -106,7 +147,7 @@ code: d.util.setCode(data)
 }
 })
 
-bot.functionManager.createCustomFunction({
+bot.functionManager.createFunction({
 name: "$setLocaleVar",
 type: "djs",
 code: async d => {
@@ -123,3 +164,26 @@ code: d.util.setCode(data)
 }
 }
 })
+
+bot.functionManager.createFunction({
+ name: "$httpStatus",
+ type: "djs",
+ code: async d => {
+ const data = d.util.aoiFunc(d)
+ const [url] = data.inside.splits
+ var request = require('axios');
+await request.get(url).then((response) => {
+ data.result = response.status
+ }).catch(function(error) {
+ if(error.response) {
+ data.result = error.response.status
+ }
+ else {
+ data.result = error
+ }
+ })
+return {
+ code: d.util.setCode(data)
+ }
+ }
+ })
